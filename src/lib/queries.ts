@@ -10,7 +10,7 @@ export const siteSettingsQuery = groq`
 `;
 
 export const homePageQuery = groq`
-  *[_type == "homePage" && _id == "homePage"][0] {
+  *[_type == "homePageContent" && _id == "homePageContent"][0] {
     heroTagline,
     heroTitle,
     heroDescription,

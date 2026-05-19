@@ -1,7 +1,7 @@
 import { defineField, defineType } from "sanity";
 
-export const homePage = defineType({
-  name: "homePage",
+export const homePageContent = defineType({
+  name: "homePageContent",
   title: "Página Inicial",
   type: "document",
   fields: [

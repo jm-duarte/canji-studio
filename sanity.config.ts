@@ -3,7 +3,7 @@ import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./src/sanity/schemaTypes";
 
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "placeholder";
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production";
 
 export default defineConfig({
@@ -30,9 +30,11 @@ export default defineConfig({
               ),
             S.listItem()
               .title("Página Inicial")
-              .id("homePage")
+              .id("homePageContent")
               .child(
-                S.document().schemaType("homePage").documentId("homePage")
+                S.document()
+                  .schemaType("homePageContent")
+                  .documentId("homePageContent")
               ),
             S.divider(),
             S.documentTypeListItem("project").title("Projetos"),

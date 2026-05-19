@@ -21,17 +21,47 @@ Portfolio site do Canji Studio migrado para Next.js 14 com Sanity CMS.
 ## Schemas do Sanity
 
 - **`siteSettings`** — Singleton: nome do estúdio, WhatsApp, redes sociais
-- **`homePage`** — Singleton: conteúdo da página inicial (hero, soluções, serviços, CTA)
+- **`homePageContent`** — Singleton: conteúdo da página inicial (hero, soluções, serviços, CTA)
 - **`project`** — Documento: projetos do portfolio
 
-## Configuração do Sanity
+## Configuração do Sanity (primeiro uso)
 
-1. Crie um projeto em https://www.sanity.io/manage
-2. Copie `.env.local.example` para `.env.local`
-3. Preencha `NEXT_PUBLIC_SANITY_PROJECT_ID` com o ID do projeto
-4. Acesse `/studio` para gerenciar o conteúdo
+### 1. Criar o projeto Sanity
 
-**Nota**: Sem as variáveis de ambiente configuradas, o site usa dados estáticos de fallback com o conteúdo original dos HTMLs.
+Acesse https://www.sanity.io/manage, crie um projeto e copie o Project ID.
+
+### 2. Configurar variáveis de ambiente
+
+```bash
+cp .env.local.example .env.local
+```
+
+Edite `.env.local`:
+
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=seu-project-id-aqui
+NEXT_PUBLIC_SANITY_DATASET=production
+```
+
+### 3. Popular o conteúdo (seed)
+
+Crie um token de escrita em **Sanity Manage → API → Tokens** com permissão **Editor** e execute:
+
+```bash
+SANITY_API_TOKEN=seu-token node scripts/seed.mjs
+```
+
+Isso criará automaticamente todos os documentos iniciais (siteSettings, homePageContent e os 3 projetos).
+
+### 4. Verificar no Studio
+
+Acesse `/studio` no site para confirmar os documentos e editar o conteúdo.
+
+### 5. Configurar CORS no Sanity
+
+Em **Sanity Manage → API → CORS Origins**, adicione a URL do seu site em produção.
+
+**Nota**: Sem as variáveis de ambiente configuradas, o site usa dados estáticos de fallback com o conteúdo original dos HTMLs. O Studio mostrará uma tela de configuração guiada.
 
 ## Desenvolvimento
 
