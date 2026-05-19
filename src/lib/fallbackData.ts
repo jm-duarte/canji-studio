@@ -1,4 +1,22 @@
 import type { HomePageContent, Project, SiteSettings } from "@/types";
+import type { PortableTextBlock } from "@portabletext/types";
+
+function toBlocks(text: string): PortableTextBlock[] {
+  return text.split("\n\n").map((paragraph, i) => ({
+    _type: "block" as const,
+    _key: `block-${i}`,
+    style: "normal" as const,
+    markDefs: [],
+    children: [
+      {
+        _type: "span" as const,
+        _key: `span-${i}`,
+        text: paragraph.trim(),
+        marks: [],
+      },
+    ],
+  }));
+}
 
 export const FALLBACK_SETTINGS: SiteSettings = {
   studioName: "Canji Studio",
@@ -75,6 +93,12 @@ export const FALLBACK_PROJECTS: Project[] = [
     client: "NeoFinance Group",
     year: "2023 - 2024",
     services: ["Digital Product Design", "Brand Identity", "Mobile Development"],
+    challenge: toBlocks(
+      "O cliente precisava de um aplicativo bancário que equilibrasse segurança de nível empresarial com uma experiência de usuário fluida e moderna, competindo com grandes players do mercado fintech.\n\nO principal desafio era construir confiança através do design, tornando operações complexas — como transferências internacionais e gestão de portfólio — acessíveis a qualquer perfil de usuário."
+    ),
+    solution: toBlocks(
+      "Desenvolvemos uma arquitetura de design centrada na biometria como autenticação primária, com dashboards personalizáveis e visualizações de dados em tempo real.\n\nO sistema de design foi construído com componentes modulares que garantem consistência e velocidade de desenvolvimento, permitindo que novas funcionalidades sejam integradas sem quebrar a experiência existente."
+    ),
     visualExplorationTitle: "Exploração Visual",
     visualExplorationDescription:
       "Cada tela foi projetada seguindo uma grade geométrica rigorosa, utilizando o azul primário como âncora visual para navegação e ações críticas.",
@@ -107,6 +131,30 @@ export const FALLBACK_PROJECTS: Project[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAYv7Wu8N96QzTH6B7FzetacH8SDOIlmX-Kv4OOIpOGO6xf36caeKdgPR3k9jlTtljMOmNp0nookcu9UlnyWPGBwPObo0HDB4JxA6zZ-1qHiHwtHe7YImrGWL-PKndLbGoP20IKxTIysD6AH6SGVlKTb30D2S6-4Fu7ghgv9pYb9jQ1he8b_2RIFWP00gaGFfZPpNFdALvIkIwTsCmS06JVTtIwL6E9tQDuFjYdyk99pVmvBtvW_9ndEz6M2PgrisDUNbuD7wMBhxk",
     shortDescription:
       "Website institucional para plataforma de monitoramento de ameaças em tempo real.",
+    heroDescription:
+      "Criamos uma presença digital de alta conversão para a CyberFlow, refletindo a precisão e confiança de sua tecnologia de segurança em cada pixel.",
+    heroBackgroundUrl:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuAYv7Wu8N96QzTH6B7FzetacH8SDOIlmX-Kv4OOIpOGO6xf36caeKdgPR3k9jlTtljMOmNp0nookcu9UlnyWPGBwPObo0HDB4JxA6zZ-1qHiHwtHe7YImrGWL-PKndLbGoP20IKxTIysD6AH6SGVlKTb30D2S6-4Fu7ghgv9pYb9jQ1he8b_2RIFWP00gaGFfZPpNFdALvIkIwTsCmS06JVTtIwL6E9tQDuFjYdyk99pVmvBtvW_9ndEz6M2PgrisDUNbuD7wMBhxk",
+    client: "CyberFlow Systems",
+    year: "2023",
+    services: ["Web Design", "Frontend Development", "Brand Positioning"],
+    challenge: toBlocks(
+      "A CyberFlow precisava de um site que transmitisse credibilidade e sofisticação técnica para um público B2B exigente, diferenciando-se em um mercado de segurança cibernética saturado.\n\nO desafio era equilibrar densidade técnica de informação com clareza narrativa, para que prospects não-técnicos também compreendessem o valor do produto."
+    ),
+    solution: toBlocks(
+      "Desenvolvemos uma landing page de alta conversão com animações de dados em tempo real e copywriting técnico preciso.\n\nO sistema de cores sombrio com acentos em ciano elétrico reforça a percepção de segurança e expertise, enquanto a estrutura da página guia o visitante do problema à solução de forma natural."
+    ),
+    visualExplorationTitle: "Exploração Visual",
+    visualExplorationDescription:
+      "O design utiliza uma paleta sombria com acentos em ciano elétrico, criando contraste visual poderoso e comunicando sofisticação tecnológica.",
+    gallery: [
+      {
+        imageUrl:
+          "https://lh3.googleusercontent.com/aida-public/AB6AXuAYv7Wu8N96QzTH6B7FzetacH8SDOIlmX-Kv4OOIpOGO6xf36caeKdgPR3k9jlTtljMOmNp0nookcu9UlnyWPGBwPObo0HDB4JxA6zZ-1qHiHwtHe7YImrGWL-PKndLbGoP20IKxTIysD6AH6SGVlKTb30D2S6-4Fu7ghgv9pYb9jQ1he8b_2RIFWP00gaGFfZPpNFdALvIkIwTsCmS06JVTtIwL6E9tQDuFjYdyk99pVmvBtvW_9ndEz6M2PgrisDUNbuD7wMBhxk",
+        alt: "CyberFlow website hero section",
+        caption: "Hero section com animação de monitoramento em tempo real",
+      },
+    ],
     publishedAt: "2023-06-01",
   },
   {
@@ -118,6 +166,30 @@ export const FALLBACK_PROJECTS: Project[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAeHd_PoO8x2hw3722ZJ_R_qPBUMvPdbXlAIaU5WYOhdhoRrOlhpfgpk_Y9t8jIjIWs-plfAfqXOjPsKfgKNIuLvGZtW1EBZtCBs7jgxCE4o4QwhbLuXzkc_ehZg_YigQdVjLJx-j4snqShFiObMPK4gkw_vQp9aR4t2QpB69N30gCWc-pkaBt4JvkmXu9gy4-2j6MlcElvXyXpXc2wezcEE1KN51TYurFId2UyBIJfBdDW3Mo9r22DflrNuwLatYz09z92fY5wE",
     shortDescription:
       "Redefinição da identidade visual para estúdio de iluminação inteligente de alto padrão.",
+    heroDescription:
+      "Uma identidade visual que captura a essência da luz: elegância, precisão e a capacidade de transformar espaços em experiências sensoriais únicas.",
+    heroBackgroundUrl:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAeHd_PoO8x2hw3722ZJ_R_qPBUMvPdbXlAIaU5WYOhdhoRrOlhpfgpk_Y9t8jIjIWs-plfAfqXOjPsKfgKNIuLvGZtW1EBZtCBs7jgxCE4o4QwhbLuXzkc_ehZg_YigQdVjLJx-j4snqShFiObMPK4gkw_vQp9aR4t2QpB69N30gCWc-pkaBt4JvkmXu9gy4-2j6MlcElvXyXpXc2wezcEE1KN51TYurFId2UyBIJfBdDW3Mo9r22DflrNuwLatYz09z92fY5wE",
+    client: "Lumina Smart Lighting",
+    year: "2023",
+    services: ["Brand Strategy", "Visual Identity", "Brand Guidelines"],
+    challenge: toBlocks(
+      "A Lumina precisava reposicionar sua marca para o segmento premium de iluminação arquitetural, afastando-se de uma identidade genérica para comunicar exclusividade e inovação técnica.\n\nO mercado-alvo são arquitetos e designers de interiores sofisticados, que valorizam estética e precisão técnica em igual medida."
+    ),
+    solution: toBlocks(
+      "Criamos um sistema de identidade visual baseado em gradientes dourados e tipografia serif moderna, com um logotipo que evoca a refração da luz através de prismas geométricos.\n\nO guia de marca define aplicações para embalagem premium, materiais digitais e ambientes físicos — garantindo consistência em todos os pontos de contato com o cliente."
+    ),
+    visualExplorationTitle: "Exploração Visual",
+    visualExplorationDescription:
+      "A paleta dourada com fundos escuros comunica luxo e sofisticação, enquanto a tipografia geométrica adiciona modernidade e precisão.",
+    gallery: [
+      {
+        imageUrl:
+          "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAeHd_PoO8x2hw3722ZJ_R_qPBUMvPdbXlAIaU5WYOhdhoRrOlhpfgpk_Y9t8jIjIWs-plfAfqXOjPsKfgKNIuLvGZtW1EBZtCBs7jgxCE4o4QwhbLuXzkc_ehZg_YigQdVjLJx-j4snqShFiObMPK4gkw_vQp9aR4t2QpB69N30gCWc-pkaBt4JvkmXu9gy4-2j6MlcElvXyXpXc2wezcEE1KN51TYurFId2UyBIJfBdDW3Mo9r22DflrNuwLatYz09z92fY5wE",
+        alt: "Lumina brand identity showcase",
+        caption: "Sistema de identidade visual completo",
+      },
+    ],
     publishedAt: "2023-03-01",
   },
 ];

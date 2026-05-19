@@ -37,7 +37,31 @@ if (!token) {
   process.exit(1);
 }
 
-const client = createClient({ projectId, dataset, token, useCdn: false, apiVersion: "2024-01-01" });
+const client = createClient({
+  projectId,
+  dataset,
+  token,
+  useCdn: false,
+  apiVersion: "2024-01-01",
+});
+
+/** Converte texto simples em um array de blocos PortableText */
+function toBlocks(text) {
+  return text.split("\n\n").map((paragraph, i) => ({
+    _type: "block",
+    _key: `block-${i}`,
+    style: "normal",
+    markDefs: [],
+    children: [
+      {
+        _type: "span",
+        _key: `span-${i}`,
+        text: paragraph.trim(),
+        marks: [],
+      },
+    ],
+  }));
+}
 
 const documents = [
   {
@@ -46,11 +70,10 @@ const documents = [
     studioName: "Canji Studio",
     whatsappNumber: "5511999999999",
     footerTagline: "Precision in Digital Craft.",
-    socialLinks: [
-      { platform: "Instagram", url: "https://instagram.com/canjistudio" },
-      { platform: "LinkedIn", url: "https://linkedin.com/company/canjistudio" },
-      { platform: "Behance", url: "https://behance.net/canjistudio" },
-    ],
+    socialLinks: {
+      linkedin: "https://linkedin.com/company/canjistudio",
+      dribbble: "https://dribbble.com/canjistudio",
+    },
   },
   {
     _id: "homePageContent",
@@ -129,10 +152,12 @@ const documents = [
     client: "NeoFinance Group",
     year: "2023 - 2024",
     services: ["Digital Product Design", "Brand Identity", "Mobile Development"],
-    challenge:
-      "O cliente precisava de um aplicativo bancário que equilibrasse segurança de nível empresarial com uma experiência de usuário fluida e moderna, competindo com grandes players do mercado fintech.",
-    solution:
-      "Desenvolvemos uma arquitetura de design centrada na biometria como autenticação primária, com dashboards personalizáveis e visualizações de dados em tempo real. O sistema de design foi construído com componentes modulares que garantem consistência e velocidade de desenvolvimento.",
+    challenge: toBlocks(
+      "O cliente precisava de um aplicativo bancário que equilibrasse segurança de nível empresarial com uma experiência de usuário fluida e moderna, competindo com grandes players do mercado fintech.\n\nO principal desafio era construir confiança através do design, tornando operações complexas — como transferências internacionais e gestão de portfólio — acessíveis a qualquer perfil de usuário."
+    ),
+    solution: toBlocks(
+      "Desenvolvemos uma arquitetura de design centrada na biometria como autenticação primária, com dashboards personalizáveis e visualizações de dados em tempo real.\n\nO sistema de design foi construído com componentes modulares que garantem consistência e velocidade de desenvolvimento, permitindo que novas funcionalidades sejam integradas sem quebrar a experiência existente."
+    ),
     visualExplorationTitle: "Exploração Visual",
     visualExplorationDescription:
       "Cada tela foi projetada seguindo uma grade geométrica rigorosa, utilizando o azul primário como âncora visual para navegação e ações críticas.",
@@ -178,10 +203,12 @@ const documents = [
     client: "CyberFlow Systems",
     year: "2023",
     services: ["Web Design", "Frontend Development", "Brand Positioning"],
-    challenge:
-      "A CyberFlow precisava de um site que transmitisse credibilidade e sofisticação técnica para um público B2B exigente, diferenciando-se em um mercado de segurança cibernética saturado.",
-    solution:
-      "Desenvolvemos uma landing page de alta conversão com animações de dados em tempo real, copywriting técnico e um sistema de cores sombrio que reforça a percepção de segurança e expertise.",
+    challenge: toBlocks(
+      "A CyberFlow precisava de um site que transmitisse credibilidade e sofisticação técnica para um público B2B exigente, diferenciando-se em um mercado de segurança cibernética saturado.\n\nO desafio era equilibrar densidade técnica de informação com clareza narrativa, para que prospects não-técnicos também compreendessem o valor do produto."
+    ),
+    solution: toBlocks(
+      "Desenvolvemos uma landing page de alta conversão com animações de dados em tempo real e copywriting técnico preciso.\n\nO sistema de cores sombrio com acentos em ciano elétrico reforça a percepção de segurança e expertise, enquanto a estrutura da página guia o visitante do problema à solução de forma natural."
+    ),
     visualExplorationTitle: "Exploração Visual",
     visualExplorationDescription:
       "O design utiliza uma paleta sombria com acentos em ciano elétrico, criando contraste visual poderoso e comunicando sofisticação tecnológica.",
@@ -213,10 +240,12 @@ const documents = [
     client: "Lumina Smart Lighting",
     year: "2023",
     services: ["Brand Strategy", "Visual Identity", "Brand Guidelines"],
-    challenge:
-      "A Lumina precisava reposicionar sua marca para o segmento premium de iluminação arquitetural, afastando-se de uma identidade genérica para comunicar exclusividade e inovação técnica.",
-    solution:
-      "Criamos um sistema de identidade visual baseado em gradientes dourados e tipografia serif, com um logotipo que evoca a refração da luz. O guia de marca define aplicações para embalagem, digital e ambientes físicos.",
+    challenge: toBlocks(
+      "A Lumina precisava reposicionar sua marca para o segmento premium de iluminação arquitetural, afastando-se de uma identidade genérica para comunicar exclusividade e inovação técnica.\n\nO mercado-alvo são arquitetos e designers de interiores sofisticados, que valorizam estética e precisão técnica em igual medida."
+    ),
+    solution: toBlocks(
+      "Criamos um sistema de identidade visual baseado em gradientes dourados e tipografia serif moderna, com um logotipo que evoca a refração da luz através de prismas geométricos.\n\nO guia de marca define aplicações para embalagem premium, materiais digitais e ambientes físicos — garantindo consistência em todos os pontos de contato com o cliente."
+    ),
     visualExplorationTitle: "Exploração Visual",
     visualExplorationDescription:
       "A paleta dourada com fundos escuros comunica luxo e sofisticação, enquanto a tipografia geométrica adiciona modernidade e precisão.",
@@ -234,7 +263,9 @@ const documents = [
 ];
 
 async function seed() {
-  console.log(`\n🌱 Iniciando seed do Sanity — projeto: ${projectId} / dataset: ${dataset}\n`);
+  console.log(
+    `\n🌱 Iniciando seed do Sanity — projeto: ${projectId} / dataset: ${dataset}\n`
+  );
 
   for (const doc of documents) {
     try {
@@ -245,7 +276,9 @@ async function seed() {
     }
   }
 
-  console.log("\n✨ Seed concluído! Acesse /studio para verificar os documentos.\n");
+  console.log(
+    "\n✨ Seed concluído! Acesse /studio para verificar os documentos.\n"
+  );
 }
 
 seed();

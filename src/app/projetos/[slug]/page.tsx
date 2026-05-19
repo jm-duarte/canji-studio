@@ -53,6 +53,7 @@ export default async function ProjectPage({
                 src={heroImg}
                 alt="Background"
                 fill
+                priority
                 className="object-cover"
                 unoptimized
               />
