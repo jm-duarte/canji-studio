@@ -1,0 +1,252 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Canji Studio | Precision in Digital Craft</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#dae2fd",
+                        "on-tertiary-fixed": "#001c39",
+                        "on-secondary-fixed": "#111c2d",
+                        "on-secondary": "#263143",
+                        "inverse-primary": "#0053db",
+                        "inverse-on-surface": "#283044",
+                        "surface-bright": "#31394d",
+                        "surface-container": "#171f33",
+                        "secondary": "#bcc7de",
+                        "primary": "#b4c5ff",
+                        "primary-container": "#2563eb",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-container": "#196fc0",
+                        "surface-dim": "#0b1326",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "on-secondary-container": "#aeb9d0",
+                        "secondary-fixed": "#d8e3fb",
+                        "tertiary": "#a4c9ff",
+                        "surface-container-highest": "#2d3449",
+                        "secondary-container": "#3e495d",
+                        "background": "#0b1326",
+                        "tertiary-fixed-dim": "#a4c9ff",
+                        "on-tertiary-container": "#ebf1ff",
+                        "inverse-surface": "#dae2fd",
+                        "surface-container-lowest": "#060e20",
+                        "primary-fixed": "#dbe1ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary-container": "#eeefff",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "surface-container-high": "#222a3d",
+                        "on-error-container": "#ffdad6",
+                        "on-surface": "#dae2fd",
+                        "on-primary-fixed": "#00174b",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#2d3449",
+                        "on-tertiary-fixed-variant": "#004883",
+                        "surface-container-low": "#131b2e",
+                        "on-error": "#690005",
+                        "on-primary": "#002a78",
+                        "surface": "#0b1326",
+                        "on-surface-variant": "#c3c6d7",
+                        "outline-variant": "#434655",
+                        "tertiary-fixed": "#d4e3ff",
+                        "outline": "#8d90a0",
+                        "surface-tint": "#b4c5ff",
+                        "on-tertiary": "#00315d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "section-gap-mobile": "64px",
+                        "section-gap-desktop": "120px",
+                        "margin-safe": "32px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326;
+            color: #dae2fd;
+        }
+        .glass-card {
+            background: rgba(23, 31, 51, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+        }
+        .logo-fill-hover {
+            position: relative;
+            color: rgba(218, 226, 253, 0.4);
+            background: linear-gradient(to right, #2563eb 50%, rgba(218, 226, 253, 0.4) 50%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-background-clip: text;
+            background-clip: text;
+            transition: background-position 0.5s ease-out, color 0.5s ease-out;
+        }
+        .logo-fill-hover:hover {
+            background-position: 0 0;
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuC9jp9js53aKWOM6yDMiFpbPSeOTnI2Xy3rln5ImPepCcmzC_3nWWnWrI3rGY31hUie0gyBEO3mtlnB1BsKYx8Ij8ukJoTrnyI1ctC-0aZ_qZgXbqdn-em0cNtMK70pi3j077wECil9tAgxkdzPDf89S2KJKtah0mHFUwHyowHI3X8MHVX9DqgHyUVSWzUlljyxm-sSL9pZkFjm9m2zi-an1kRG8OOdF6JQaoDS3wcAf3wRmMZwmIDVSrJoDS67wI9vuYmwJ88siOM0Rw')] bg-cover bg-center bg-fixed">
+<!-- Navbar Component -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10">
+<nav class="flex justify-between items-center px-margin-safe py-4 max-w-7xl mx-auto">
+<a href="index.html" class="font-display-lg text-headline-lg tracking-tighter logo-fill-hover cursor-pointer no-underline block">Canji Studio</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors no-underline" href="portfolio.html">Nossos Projetos</a>
+</div>
+<a href="https://wa.me/your-number" class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-bold hover:opacity-80 transition-all active:scale-95 no-underline inline-block text-center">Entrar em contato</a>
+</nav>
+</header>
+<main>
+<!-- Hero Section Component -->
+<section class="relative min-h-screen flex items-center pt-20 hero-gradient">
+<div class="px-margin-safe max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+<div class="z-10 max-w-4xl">
+<span class="font-label-sm text-primary uppercase tracking-[0.2em] mb-4 block">Criamos Experiências que Conectam.</span>
+<h1 class="font-display-lg text-[48px] md:text-[80px] leading-tight mb-8">
+                        Bem-vindo a <span class="text-primary-container font-bold">Canji.</span>
+</h1>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto mb-12">
+                        Na Canji, acreditamos que o design é a alma de qualquer product digital. Nossa missão é transformar suas ideias em experiências digitais que encantam e conectam. Especializados em UX/UI Design e desenvolvimento de sites e apps, estamos prontos para levar seu projeto ao próximo nível.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95">
+                            Quero saber mais
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<a href="portfolio.html" class="bg-transparent border border-white/20 backdrop-blur-md px-8 py-4 rounded-xl font-bold hover:bg-white/5 transition-all no-underline inline-block text-on-surface">
+                            Ver Portfólio
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions Section Component -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-safe max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- UI/UX Card -->
+<article class="glass-card p-12 rounded-3xl group hover:border-primary/50 transition-colors">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">brush</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-4">UX/UI Design</h2>
+<p class="font-body-md text-on-surface-variant">
+                        Criamos sistemas visuais que respiram inovação. Nossa abordagem foca na fluidez do movimento e na clareza da informação, garantindo que cada toque do usuário seja uma descoberta.
+                    </p>
+</article>
+<!-- Development Card -->
+<article class="glass-card p-12 rounded-3xl group hover:border-primary/50 transition-colors">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">code</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-4">Desenvolvimento de Sites e Apps</h2>
+<p class="font-body-md text-on-surface-variant">
+                        Engenharia de software com foco em performance e escalabilidade. Traduzimos designs sofisticados em código limpo, rápido e preparado para o futuro do mercado global.
+                    </p>
+</article>
+</div>
+</section>
+<!-- Services Grid Section Component -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest">
+<div class="px-margin-safe max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h3 class="font-headline-lg text-headline-lg mb-4">Nossos Serviços</h3>
+<div class="w-20 h-1 bg-primary-container mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:grid-cols-2 max-w-4xl mx-auto">
+<!-- Service Card 1 -->
+<div class="glass-card rounded-2xl aspect-square flex flex-col items-center justify-center text-center p-10 transition-all duration-300 hover:border-primary-container">
+<span class="material-symbols-outlined text-primary/80 text-5xl mb-6">search</span>
+<h4 class="font-bold mb-3 text-on-surface text-2xl">Pesquisa de Usuário</h4>
+<p class="text-on-surface-variant text-[14px] leading-relaxed px-4 opacity-90">Entendemos o comportamento real do seu público para criar estratégias baseadas em dados concretos.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="glass-card rounded-2xl aspect-square flex flex-col items-center justify-center text-center p-10 transition-all duration-300 hover:border-primary-container">
+<span class="material-symbols-outlined text-primary/80 text-5xl mb-6">layers</span>
+<h4 class="font-bold mb-3 text-on-surface text-2xl">Prototipagem e Testes</h4>
+<p class="text-on-surface-variant text-[14px] leading-relaxed px-4 opacity-90">Validação rápida de hipóteses através de protótipos interativos de alta fidelidade antes do desenvolvimento.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="glass-card rounded-2xl aspect-square flex flex-col items-center justify-center text-center p-10 transition-all duration-300 hover:border-primary-container">
+<span class="material-symbols-outlined text-primary/80 text-5xl mb-6">web</span>
+<h4 class="font-bold mb-3 text-on-surface text-2xl">Desenvolvimento Web</h4>
+<p class="text-on-surface-variant text-[14px] leading-relaxed px-4 opacity-90">Websites modernos, responsivos e otimizados para conversão com tecnologias de ponta.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="glass-card rounded-2xl aspect-square flex flex-col items-center justify-center text-center p-10 transition-all duration-300 hover:border-primary-container">
+<span class="material-symbols-outlined text-primary/80 text-5xl mb-6">support_agent</span>
+<h4 class="font-bold mb-3 text-on-surface text-2xl">Manutenção e Suporte</h4>
+<p class="text-on-surface-variant text-[14px] leading-relaxed px-4 opacity-90">Cuidado contínuo para garantir que seu produto digital opere sempre em máxima performance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section Component -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-safe text-center relative overflow-hidden">
+<div class="absolute inset-0 hero-gradient -z-10"></div>
+<div class="max-w-3xl mx-auto">
+<h2 class="font-display-lg text-[40px] md:text-[64px] mb-8">Vamos Conversar?</h2>
+<p class="font-body-md text-on-surface-variant mb-12">
+                    Dê o próximo passo para transformar sua visão em realidade digital. Nossa equipe de especialistas está pronta para ouvir seu desafio.
+                </p>
+<button class="bg-primary-container text-on-primary-container px-12 py-5 rounded-full font-extrabold text-lg hover:shadow-[0_0_40px_rgba(37,99,235,0.4)] transition-all active:scale-95">
+                    Iniciar um Projeto
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-safe gap-8 max-w-7xl mx-auto w-full">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-display-lg text-headline-lg text-on-surface">Canji Studio</div>
+<p class="font-body-md text-on-surface-variant max-w-xs text-center md:text-left">
+                    © 2026 Canji Studio. Precision in Digital Craft.
+                </p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dribbble</a>
+</div>
+</div>
+</footer>
+</body></html>
