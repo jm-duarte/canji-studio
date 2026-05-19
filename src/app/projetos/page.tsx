@@ -18,7 +18,8 @@ async function getData() {
       client.fetch<SiteSettings>(siteSettingsQuery, {}, { next: { revalidate: 60 } }),
     ]);
     return { projects, settings };
-  } catch {
+  } catch (err) {
+    console.error("[Sanity] Failed to fetch projetos page data:", err);
     return { projects: null, settings: null };
   }
 }

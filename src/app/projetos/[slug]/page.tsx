@@ -16,7 +16,8 @@ async function getData(slug: string) {
       client.fetch<SiteSettings>(siteSettingsQuery, {}, { next: { revalidate: 60 } }),
     ]);
     return { project, otherProjects, settings };
-  } catch {
+  } catch (err) {
+    console.error(`[Sanity] Failed to fetch project data for slug "${slug}":`, err);
     return { project: null, otherProjects: null, settings: null };
   }
 }

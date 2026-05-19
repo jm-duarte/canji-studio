@@ -16,7 +16,8 @@ async function getData() {
       client.fetch<SiteSettings>(siteSettingsQuery, {}, { next: { revalidate: 60 } }),
     ]);
     return { home, settings };
-  } catch {
+  } catch (err) {
+    console.error("[Sanity] Failed to fetch home page data:", err);
     return { home: null, settings: null };
   }
 }
