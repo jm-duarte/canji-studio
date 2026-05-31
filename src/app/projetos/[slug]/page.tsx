@@ -3,10 +3,11 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import GalleryLightbox from "@/components/GalleryLightbox";
 import { client, urlFor } from "@/lib/sanity";
 import { projectBySlugQuery, otherProjectsQuery, siteSettingsQuery } from "@/lib/queries";
 import { FALLBACK_PROJECTS, FALLBACK_SETTINGS } from "@/lib/fallbackData";
-import type { Project, SiteSettings, GalleryItem } from "@/types";
+import type { Project, SiteSettings } from "@/types";
 
 async function getData(slug: string) {
   try {
@@ -138,7 +139,14 @@ export default async function ProjectPage({
                 </p>
               )}
             </div>
-            <GalleryGrid gallery={project.gallery} />
+            <GalleryLightbox
+              items={project.gallery.map((item) => ({
+                src: item.image ? urlFor(item.image).width(1400).url() : (item.imageUrl ?? ""),
+                alt: item.alt,
+                caption: item.caption,
+                unoptimized: !item.image,
+              }))}
+            />
           </section>
         )}
 
@@ -173,52 +181,6 @@ export default async function ProjectPage({
   );
 }
 
-function GalleryGrid({ gallery }: { gallery: GalleryItem[] }) {
-  const [first, ...rest] = gallery;
-  const firstSrc = first?.image ? urlFor(first.image).width(800).url() : first?.imageUrl ?? "";
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-margin-safe max-w-7xl mx-auto">
-      {firstSrc && (
-        <figure className="aspect-[4/5] overflow-hidden rounded-2xl group relative bg-surface-variant">
-          <Image
-            src={firstSrc}
-            alt={first?.alt ?? ""}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
-            unoptimized={!!first?.imageUrl}
-          />
-          {first?.caption && (
-            <figcaption className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
-              <span className="font-label-sm text-label-sm text-on-surface">{first.caption}</span>
-            </figcaption>
-          )}
-        </figure>
-      )}
-      {rest.length > 0 && (
-        <div className="grid grid-rows-2 gap-4">
-          {rest.slice(0, 2).map((item, i) => {
-            const src = item.image ? urlFor(item.image).width(800).url() : item.imageUrl ?? "";
-            return (
-              <figure key={i} className="aspect-[16/9] overflow-hidden rounded-2xl bg-surface-variant">
-                {src && (
-                  <Image
-                    src={src}
-                    alt={item.alt ?? ""}
-                    width={800}
-                    height={450}
-                    className="w-full h-full object-cover"
-                    unoptimized={!!item.imageUrl}
-                  />
-                )}
-              </figure>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-}
 
 function OtherProjectCard({ project }: { project: Project }) {
   const thumbSrc = project.thumbnail
