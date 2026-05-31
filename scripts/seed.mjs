@@ -136,129 +136,124 @@ const documents = [
     ctaButtonText: "Iniciar um Projeto",
   },
   {
-    _id: "project-neobank",
+    _id: "project-lumina-saas",
     _type: "project",
-    title: "NeoBank App",
-    slug: { _type: "slug", current: "neobank-app" },
-    categories: ["Mobile", "UI/UX"],
-    thumbnailUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAb9toObu770y9Ee1-3xJS1OAMc4Q8tRWqCWwCoIfgyq8xvCiR4uccP7yGofsG_58rMAkpr5n4jDVFg4H49oul7P6Ia2jKwW2nXekV7lzQKPtOuuowewTb3xPL4Xabtg9_Io3ZNgmGgqU0FOjj8cD024tMGW4B_YjmPj2L01dpbihBqgPp5K4ND5KuLD7wdCNdC2T8RLYWyEdVj2u5I8VSiWe9pq-dRPWlD8TyRVIL4xBkPuWlApLryH1GAWTkYlw3AL7g2xtwVKD0",
+    title: "Lumina SaaS: Precificação Dinâmica",
+    slug: { _type: "slug", current: "lumina-saas-precificacao-dinamica" },
+    categories: ["Web Design", "UI/UX", "SaaS"],
+    thumbnailUrl: "/portfolio/lumina-saas-10.png",
     shortDescription:
-      "Sistema bancário digital completo com foco em segurança biométrica e gestão de ativos.",
+      "Repensando a jornada de compra B2B: como transformamos a complexidade de preços em uma experiência interativa e voltada para conversão.",
     heroDescription:
-      "Redefinindo a experiência bancária digital com uma interface minimalista e um core tecnológico de alta precisão focado na transparência financeira.",
-    heroBackgroundUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCGdSoTVkw0wofQ3kFOolE5K9CC3G2JFf7gFAwQQZVydZfSitGESQlCzbKt18UVGuAR6AT8pf0WrHFjYrxCTXyOhBrvX38oBRQeIBXEHIetmxzwvTDmmTM4Aefbs7AL3gP5mV0JnWl8hgT3xpf7It7Uv_odeHxZyWZRtros54rMjj31AijjL1RoECeA6D8G7j5Ewh1KXH0MJDMraGS1zAlAVXoBgyf4rAGsa21zztolGDsfQUxhhelLgwTQOxt-o0HdTVu1CLZTQb4",
-    client: "NeoFinance Group",
-    year: "2023 - 2024",
-    services: ["Digital Product Design", "Brand Identity", "Mobile Development"],
+      "Repensando a jornada de compra B2B: como transformamos a complexidade de preços em uma experiência interativa, transparente e voltada para conversão.",
+    heroBackgroundUrl: "/portfolio/lumina-saas-10.png",
+    client: "Projeto Conceito (Lumina)",
+    year: "2024",
+    services: ["UI/UX Design", "Desenvolvimento Front-end", "Estratégia de Conversão (CRO)"],
     challenge: toBlocks(
-      "O cliente precisava de um aplicativo bancário que equilibrasse segurança de nível empresarial com uma experiência de usuário fluida e moderna, competindo com grandes players do mercado fintech.\n\nO principal desafio era construir confiança através do design, tornando operações complexas — como transferências internacionais e gestão de portfólio — acessíveis a qualquer perfil de usuário."
+      "Plataformas de software (SaaS) frequentemente sofrem com a complexidade na hora de apresentar seus planos. Para o projeto da Lumina (um software de base de conhecimento), o obstáculo central era conseguir exibir a variação de preço conforme o número de usuários, sem poluir a tela com tabelas gigantescas ou confundir o cliente.\n\nO desafio era criar uma interface capaz de atender desde pequenas startups (10 usuários) até operações de nível enterprise (mais de 1.000 usuários), mantendo a carga cognitiva baixa e deixando o valor do produto extremamente claro logo no primeiro contato."
     ),
     solution: toBlocks(
-      "Desenvolvemos uma arquitetura de design centrada na biometria como autenticação primária, com dashboards personalizáveis e visualizações de dados em tempo real.\n\nO sistema de design foi construído com componentes modulares que garantem consistência e velocidade de desenvolvimento, permitindo que novas funcionalidades sejam integradas sem quebrar a experiência existente."
+      "Abandonamos o modelo tradicional de blocos de texto estáticos. Em vez disso, implementamos uma arquitetura focada na interação através de um slider dinâmico central.\n\nEm vez de calcular mentalmente, o visitante simplesmente ajusta o controle para o tamanho exato da sua equipe, e os preços dos três planos são atualizados em tempo real. Além disso, criamos gatilhos visuais de \"gamificação\": conforme o usuário arrasta o slider para números maiores, o sistema destaca visualmente o desbloqueio de descontos progressivos (10%, 30% e ofertas especiais). Isso transforma o atrito da escolha de preços em uma experiência de descoberta que incentiva o upsell."
     ),
     visualExplorationTitle: "Exploração Visual",
     visualExplorationDescription:
-      "Cada tela foi projetada seguindo uma grade geométrica rigorosa, utilizando o azul primário como âncora visual para navegação e ações críticas.",
+      "Optamos por uma paleta focada em dark mode para transmitir modernidade e tecnologia. Utilizamos o azul primário para elementos de controle e cores quentes (laranja e rosa) para criar contraste e guiar o olhar do usuário diretamente para os planos de maior valor (Plus e Pro), facilitando a tomada de decisão rápida.",
     gallery: [
       {
         _key: "gallery-1",
-        imageUrl:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuBvYzXutEq5sk6O94hB_GVo_Q8I1y2zqM5Ry-N4YmLy3aP9WEF6g0bwnKi_HxeA0gaEKD69rKA1mIIf_e5sMkvHnplGIFRrV0w7YPpaYLUU5bDLWQeLucP-tgB9cDAljMf3ZIc4HxhGt-sj_-FQEnROwOfz0YBOPw08sp9eSLSEd1d_JYgSBhPk39s6wEgO0xgnVCHhnUcJ0Gb9R_RcO1WMQIRQKunfAVgmWi4OBmbidbQAvyw5l4xglaRgOKtOjZ3E32Mj4Kcl5yo",
-        alt: "Fintech app interface on smartphone",
-        caption: "Dashboard principal e controle de fluxo",
+        imageUrl: "/portfolio/lumina-saas-10.png",
+        alt: "Lumina SaaS — slider em 10 usuários, preços padrão",
+        caption: "Plano base com 10 usuários — preço inicial",
       },
       {
         _key: "gallery-2",
-        imageUrl:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuBMt8BYW58jjHG65rJ9QMKWHZF09mTJcvOgAJ4gUXoBATCeni3qqTa0wW-fxMnxaDrFRIc8coBDAI04ER2qjEkbpSJ03JkHbbOuVoF44yF7KcNdLP8QyDC9FcmiFCxGaFiKclD2jsKaN7Raomqi3ROzV_W-gwL0G4-jQu0txmHuOfpGwMdi-sKOVe-mWpQUdopnKp8unI4qfADHNJUhY7uqCSuJ7MgoX8W8B5sTsHSfcdRkkXJyFd2VMkbtinMFNHeI2WCnZLZq5vA",
-        alt: "Data visualization dashboard",
-        caption: "",
+        imageUrl: "/portfolio/lumina-saas-500.png",
+        alt: "Lumina SaaS — slider em 500 usuários, 10% de desconto liberado",
+        caption: "10% de desconto liberado ao atingir 100 usuários",
       },
       {
         _key: "gallery-3",
-        imageUrl:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuCoZDMFQyRDhlU9VkOmi798OYgQyycq-l42mBxkfOKx4ZIkNo3FLSPy36VSwaRtKkrZ1WiH_-0WSyW4HB5VbM5Dqe9taBc2ajVXxalXlohQJKx-Q8OuR9TqbYGjQWAA6aeTzFk6NsCWTo3wV-z6BbdzWjCROZ26u_2-LqhtVNpWD76tSG3YIYYLquiYw3OSNfG892GREvEgbayR28cQEOfK28QHDRC94qs2maZUyep39_D5-VLBoXyFTu8zWbj8Mts29EXjLVUTQZ4",
-        alt: "App UI components showcase",
-        caption: "",
+        imageUrl: "/portfolio/lumina-saas-1000.png",
+        alt: "Lumina SaaS — slider em 1000 usuários, oferta especial enterprise",
+        caption: "Oferta especial enterprise desbloqueada para 1.000+ usuários",
       },
     ],
-    publishedAt: "2024-01-01",
+    publishedAt: "2024-06-01",
   },
   {
-    _id: "project-cyberflow",
+    _id: "project-sagas-fortkamp",
     _type: "project",
-    title: "CyberFlow Website",
-    slug: { _type: "slug", current: "cyberflow-website" },
-    categories: ["Web Dev", "SaaS"],
-    thumbnailUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAYv7Wu8N96QzTH6B7FzetacH8SDOIlmX-Kv4OOIpOGO6xf36caeKdgPR3k9jlTtljMOmNp0nookcu9UlnyWPGBwPObo0HDB4JxA6zZ-1qHiHwtHe7YImrGWL-PKndLbGoP20IKxTIysD6AH6SGVlKTb30D2S6-4Fu7ghgv9pYb9jQ1he8b_2RIFWP00gaGFfZPpNFdALvIkIwTsCmS06JVTtIwL6E9tQDuFjYdyk99pVmvBtvW_9ndEz6M2PgrisDUNbuD7wMBhxk",
+    title: "Sagás & Fortkamp: Autoridade Digital",
+    slug: { _type: "slug", current: "sagas-fortkamp-autoridade-digital" },
+    categories: ["Web Design", "Institucional"],
+    thumbnailUrl: "/portfolio/sagas-fortkamp-1.jpg",
     shortDescription:
-      "Website institucional para plataforma de monitoramento de ameaças em tempo real.",
+      "Lançamento ágil e estratégico de um portal institucional em WordPress para posicionar um novo escritório de advocacia focado em Direito Médico.",
     heroDescription:
-      "Criamos uma presença digital de alta conversão para a CyberFlow, refletindo a precisão e confiança de sua tecnologia de segurança em cada pixel.",
-    heroBackgroundUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuAYv7Wu8N96QzTH6B7FzetacH8SDOIlmX-Kv4OOIpOGO6xf36caeKdgPR3k9jlTtljMOmNp0nookcu9UlnyWPGBwPObo0HDB4JxA6zZ-1qHiHwtHe7YImrGWL-PKndLbGoP20IKxTIysD6AH6SGVlKTb30D2S6-4Fu7ghgv9pYb9jQ1he8b_2RIFWP00gaGFfZPpNFdALvIkIwTsCmS06JVTtIwL6E9tQDuFjYdyk99pVmvBtvW_9ndEz6M2PgrisDUNbuD7wMBhxk",
-    client: "CyberFlow Systems",
-    year: "2023",
-    services: ["Web Design", "Frontend Development", "Brand Positioning"],
+      "Lançamento ágil e estratégico de um portal institucional em WordPress para posicionar um novo escritório de advocacia focado em Direito Médico.",
+    heroBackgroundUrl: "/portfolio/sagas-fortkamp-1.jpg",
+    client: "Sagás & Fortkamp",
+    year: "2024",
+    services: ["UI/UX Design", "Desenvolvimento WordPress", "Estratégia Institucional"],
     challenge: toBlocks(
-      "A CyberFlow precisava de um site que transmitisse credibilidade e sofisticação técnica para um público B2B exigente, diferenciando-se em um mercado de segurança cibernética saturado.\n\nO desafio era equilibrar densidade técnica de informação com clareza narrativa, para que prospects não-técnicos também compreendessem o valor do produto."
+      "A Sagás & Fortkamp nasceu como um novo escritório especializado em uma área muito delicada: o Direito Médico e da Saúde. Por ser uma operação nova, o principal desafio era o tempo. As fundadoras precisavam de uma presença digital rápida para começar a prospectar clientes e transmitir confiança imediata, sem abrir mão da sofisticação e da clareza institucional.\n\nPrecisávamos criar do zero um ambiente que equilibrasse a seriedade e o rigor técnico da advocacia com a empatia e o acolhimento necessários para clientes que enfrentam problemas de saúde."
     ),
     solution: toBlocks(
-      "Desenvolvemos uma landing page de alta conversão com animações de dados em tempo real e copywriting técnico preciso.\n\nO sistema de cores sombrio com acentos em ciano elétrico reforça a percepção de segurança e expertise, enquanto a estrutura da página guia o visitante do problema à solução de forma natural."
+      "Para atender à urgência do prazo sem sacrificar a qualidade, optamos pelo desenvolvimento em WordPress. Essa escolha técnica nos permitiu entregar um site altamente otimizado e responsivo em tempo recorde.\n\nA arquitetura de informação foi desenhada para ir direto ao ponto. Dividimos os serviços em três pilares principais (Direito Médico, Direito da Saúde e Empresarial para Clínicas) com cards visuais de fácil clique. Além disso, destacamos estrategicamente um bloco de \"Sobre o Escritório\" logo na página inicial para humanizar a marca e gerar conexão imediata entre as advogadas e seus futuros clientes."
     ),
     visualExplorationTitle: "Exploração Visual",
     visualExplorationDescription:
-      "O design utiliza uma paleta sombria com acentos em ciano elétrico, criando contraste visual poderoso e comunicando sofisticação tecnológica.",
+      "Para a paleta de cores, adotamos a solidez do azul marinho profundo em contraste com tons de dourado envelhecido, transmitindo elegância, justiça e credibilidade. A curadoria de imagens fugiu dos clichês de tribunais, focando no aspecto humano: profissionais da saúde, cuidado com o paciente e acolhimento.",
     gallery: [
       {
         _key: "gallery-1",
-        imageUrl:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuAYv7Wu8N96QzTH6B7FzetacH8SDOIlmX-Kv4OOIpOGO6xf36caeKdgPR3k9jlTtljMOmNp0nookcu9UlnyWPGBwPObo0HDB4JxA6zZ-1qHiHwtHe7YImrGWL-PKndLbGoP20IKxTIysD6AH6SGVlKTb30D2S6-4Fu7ghgv9pYb9jQ1he8b_2RIFWP00gaGFfZPpNFdALvIkIwTsCmS06JVTtIwL6E9tQDuFjYdyk99pVmvBtvW_9ndEz6M2PgrisDUNbuD7wMBhxk",
-        alt: "CyberFlow website hero section",
-        caption: "Hero section com animação de monitoramento em tempo real",
+        imageUrl: "/portfolio/sagas-fortkamp-1.jpg",
+        alt: "Sagás & Fortkamp — página inicial completa",
+        caption: "Homepage com hero, serviços e seção sobre o escritório",
+      },
+      {
+        _key: "gallery-2",
+        imageUrl: "/portfolio/sagas-fortkamp-2.jpg",
+        alt: "Sagás & Fortkamp — visão alternativa do layout",
+        caption: "Seção de CTA e rodapé com identidade sólida",
       },
     ],
-    publishedAt: "2023-06-01",
+    publishedAt: "2024-03-01",
   },
   {
-    _id: "project-lumina",
+    _id: "project-estetica-master",
     _type: "project",
-    title: "Lumina Branding",
-    slug: { _type: "slug", current: "lumina-branding" },
-    categories: ["Branding", "Visual Identity"],
-    thumbnailUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAeHd_PoO8x2hw3722ZJ_R_qPBUMvPdbXlAIaU5WYOhdhoRrOlhpfgpk_Y9t8jIjIWs-plfAfqXOjPsKfgKNIuLvGZtW1EBZtCBs7jgxCE4o4QwhbLuXzkc_ehZg_YigQdVjLJx-j4snqShFiObMPK4gkw_vQp9aR4t2QpB69N30gCWc-pkaBt4JvkmXu9gy4-2j6MlcElvXyXpXc2wezcEE1KN51TYurFId2UyBIJfBdDW3Mo9r22DflrNuwLatYz09z92fY5wE",
+    title: "Estética Master: Lançamento de Evento",
+    slug: { _type: "slug", current: "estetica-master-lancamento-evento" },
+    categories: ["Web Design", "Landing Page"],
+    thumbnailUrl: "/portfolio/estetica-master.png",
     shortDescription:
-      "Redefinição da identidade visual para estúdio de iluminação inteligente de alto padrão.",
+      "Como desenhamos uma Landing Page focada em autoridade e gatilhos de urgência para maximizar a venda de ingressos na pré-venda.",
     heroDescription:
-      "Uma identidade visual que captura a essência da luz: elegância, precisão e a capacidade de transformar espaços em experiências sensoriais únicas.",
-    heroBackgroundUrl:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAeHd_PoO8x2hw3722ZJ_R_qPBUMvPdbXlAIaU5WYOhdhoRrOlhpfgpk_Y9t8jIjIWs-plfAfqXOjPsKfgKNIuLvGZtW1EBZtCBs7jgxCE4o4QwhbLuXzkc_ehZg_YigQdVjLJx-j4snqShFiObMPK4gkw_vQp9aR4t2QpB69N30gCWc-pkaBt4JvkmXu9gy4-2j6MlcElvXyXpXc2wezcEE1KN51TYurFId2UyBIJfBdDW3Mo9r22DflrNuwLatYz09z92fY5wE",
-    client: "Lumina Smart Lighting",
-    year: "2023",
-    services: ["Brand Strategy", "Visual Identity", "Brand Guidelines"],
+      "Como desenhamos uma Landing Page focada em autoridade e gatilhos de urgência para maximizar a venda de ingressos.",
+    heroBackgroundUrl: "/portfolio/estetica-master.png",
+    client: "Projeto Conceito",
+    year: "2024",
+    services: ["UI/UX Design", "Estratégia de Landing Page", "CRO"],
     challenge: toBlocks(
-      "A Lumina precisava reposicionar sua marca para o segmento premium de iluminação arquitetural, afastando-se de uma identidade genérica para comunicar exclusividade e inovação técnica.\n\nO mercado-alvo são arquitetos e designers de interiores sofisticados, que valorizam estética e precisão técnica em igual medida."
+      "Em páginas de eventos, o maior desafio é equilibrar a emoção da venda com a necessidade de passar informações densas. Para o Estética Master, o objetivo principal era exibir o extenso currículo, as formações e os métodos de quatro palestrantes de peso, sem transformar a página em um \"muro de texto\" que espantasse o usuário.\n\nPrecisávamos garantir que a autoridade de cada profissional ficasse evidente, enquanto mantínhamos o fluxo de leitura dinâmico e direcionado para a ação principal: a compra do ingresso na pré-venda."
     ),
     solution: toBlocks(
-      "Criamos um sistema de identidade visual baseado em gradientes dourados e tipografia serif moderna, com um logotipo que evoca a refração da luz através de prismas geométricos.\n\nO guia de marca define aplicações para embalagem premium, materiais digitais e ambientes físicos — garantindo consistência em todos os pontos de contato com o cliente."
+      "Para resolver o problema da exibição dos currículos, aplicamos um conceito clássico de usabilidade: o padrão de leitura em \"Z\". Alternamos o alinhamento das fotos e textos de cada palestrante (esquerda/direita). Isso quebra a monotonia visual, mantém o cérebro engajado e facilita a escaneabilidade dos tópicos de formação.\n\nAlém da distribuição de conteúdo, aplicamos engenharia de conversão em três frentes: um cronômetro de destaque logo na primeira dobra validando a escassez da oferta de 40% OFF; uma sessão estruturada de FAQ no rodapé para eliminar dúvidas de logística ou pagamento; e um espaço central dedicado a um vídeo de vendas (VSL), permitindo que a organização faça o pitch final antes da revelação do preço."
     ),
     visualExplorationTitle: "Exploração Visual",
     visualExplorationDescription:
-      "A paleta dourada com fundos escuros comunica luxo e sofisticação, enquanto a tipografia geométrica adiciona modernidade e precisão.",
+      "Para o setor de estética, o design precisa transmitir limpeza, sofisticação e energia. Optamos por um fundo predominantemente claro (white/off-white) contrastando com botões e tipografias de destaque em tom vibrante de magenta, criando pontos focais extremamente fortes para as chamadas de ação (CTAs).",
     gallery: [
       {
         _key: "gallery-1",
-        imageUrl:
-          "https://lh3.googleusercontent.com/aida-public/AB6AXuBhAeHd_PoO8x2hw3722ZJ_R_qPBUMvPdbXlAIaU5WYOhdhoRrOlhpfgpk_Y9t8jIjIWs-plfAfqXOjPsKfgKNIuLvGZtW1EBZtCBs7jgxCE4o4QwhbLuXzkc_ehZg_YigQdVjLJx-j4snqShFiObMPK4gkw_vQp9aR4t2QpB69N30gCWc-pkaBt4JvkmXu9gy4-2j6MlcElvXyXpXc2wezcEE1KN51TYurFId2UyBIJfBdDW3Mo9r22DflrNuwLatYz09z92fY5wE",
-        alt: "Lumina brand identity showcase",
-        caption: "Sistema de identidade visual completo",
+        imageUrl: "/portfolio/estetica-master.png",
+        alt: "Estética Master 2024 — landing page completa",
+        caption: "Landing page com countdown, palestrantes e VSL",
       },
     ],
-    publishedAt: "2023-03-01",
+    publishedAt: "2024-09-01",
   },
 ];
 
