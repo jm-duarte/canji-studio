@@ -1,10 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { client } from "@/lib/sanity";
+import ProjectsGrid from "@/components/ProjectsGrid";
+import { client, urlFor } from "@/lib/sanity";
 import { allProjectsQuery, siteSettingsQuery } from "@/lib/queries";
-import { urlFor } from "@/lib/sanity";
 import { FALLBACK_PROJECTS, FALLBACK_SETTINGS } from "@/lib/fallbackData";
 import type { Project, SiteSettings } from "@/types";
 
@@ -52,30 +50,18 @@ export default async function ProjetosPage() {
           </div>
         </section>
 
-        <section className="px-gutter mb-12 pt-16">
-          <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-3 md:gap-4">
-            {["All", "UI/UX Design", "Web Dev", "Mobile", "Branding"].map((filter) => (
-              <button
-                key={filter}
-                className={`px-6 py-2 rounded-full border font-label-sm ${
-                  filter === "All"
-                    ? "border-primary bg-primary/10 text-primary"
-                    : "border-outline-variant text-on-surface-variant hover:border-primary hover:text-primary transition-colors"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section className="px-gutter mb-section-gap-desktop">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <ProjectCard key={project._id} project={project} />
-            ))}
-          </div>
-        </section>
+        <ProjectsGrid
+          projects={projects.map((p) => ({
+            _id: p._id,
+            title: p.title,
+            slug: p.slug.current,
+            categories: p.categories ?? [],
+            thumbSrc: p.thumbnail
+              ? urlFor(p.thumbnail).width(800).height(450).url()
+              : (p.thumbnailUrl ?? ""),
+            shortDescription: p.shortDescription ?? "",
+          }))}
+        />
 
         <section className="px-gutter pb-section-gap-desktop">
           <div className="max-w-7xl mx-auto glass-card rounded-3xl p-12 md:p-24 text-center relative overflow-hidden">
@@ -106,50 +92,3 @@ export default async function ProjetosPage() {
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
-  const thumbSrc = project.thumbnail
-    ? urlFor(project.thumbnail).width(800).height(450).url()
-    : project.thumbnailUrl ?? "";
-
-  return (
-    <article className="group glass-card rounded-xl overflow-hidden flex flex-col transition-all duration-500 hover:-translate-y-2">
-      <div className="aspect-video relative overflow-hidden bg-surface-variant">
-        {thumbSrc && (
-          <Image
-            src={thumbSrc}
-            alt={project.title}
-            fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
-            unoptimized={!!project.thumbnailUrl}
-          />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex gap-2 mb-4 flex-wrap">
-          {project.categories?.map((cat) => (
-            <span
-              key={cat}
-              className="px-3 py-1 bg-secondary-container/30 text-secondary text-[10px] font-label-sm rounded uppercase tracking-wider"
-            >
-              {cat}
-            </span>
-          ))}
-        </div>
-        <h3 className="font-headline-lg text-headline-lg text-on-surface mb-2">{project.title}</h3>
-        <p className="text-on-surface-variant font-body-md mb-6 flex-grow">
-          {project.shortDescription}
-        </p>
-        <Link
-          href={`/projetos/${project.slug.current}`}
-          className="inline-flex items-center text-primary font-bold gap-2 group/link no-underline"
-        >
-          Ver projeto
-          <span className="material-symbols-outlined transition-transform group-hover/link:translate-x-1">
-            arrow_forward
-          </span>
-        </Link>
-      </div>
-    </article>
-  );
-}
