@@ -41,7 +41,6 @@ export default async function ProjectPage({
       ? rawOther
       : FALLBACK_PROJECTS.filter((p) => p.slug.current !== slug).slice(0, 3);
 
-  const heroImg = project.heroBackgroundUrl ?? "";
   const categories = project.categories?.join(" / ") ?? "";
 
   return (
@@ -49,18 +48,6 @@ export default async function ProjectPage({
       <Navbar whatsappNumber={settings.whatsappNumber} />
       <main>
         <header className="relative min-h-[70vh] flex flex-col justify-end pb-24 mesh-gradient overflow-hidden">
-          {heroImg && (
-            <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-              <Image
-                src={heroImg}
-                alt="Background"
-                fill
-                priority
-                className="object-cover"
-                unoptimized
-              />
-            </div>
-          )}
           <div className="relative z-10 px-margin-safe max-w-7xl mx-auto w-full pt-32">
             <div className="flex flex-col items-start gap-4">
               {categories && (
